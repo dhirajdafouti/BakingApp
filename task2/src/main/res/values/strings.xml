@@ -1,3 +1,6 @@
 <resources>
-    <string name="app_name">Hellofresh test</string>
+    <string name="app_name">Hellofresh</string>
+    <string name="loading">Loading</string>
+    <string name="retry_button_text">Retry</string>
+    <string name="no_results">No Recipe List Found</string>
 </resources>

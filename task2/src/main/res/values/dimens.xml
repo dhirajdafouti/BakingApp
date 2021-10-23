@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="empty_repo_text_size">12sp</dimen>
+    <dimen name="row_item_margin_vertical">4dp</dimen>
+</resources>
