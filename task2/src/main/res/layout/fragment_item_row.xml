@@ -13,6 +13,9 @@
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
         app:cardElevation="5dp"
+        app:cardMaxElevation="5dp"
+        app:cardBackgroundColor="@color/default_text_color"
+        android:background="@color/text_grey"
         app:cardCornerRadius="10dp"
         android:layout_height="wrap_content">
 
@@ -20,7 +23,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:orientation="vertical"
             tools:ignore="ExtraText,MissingConstraints">
 
@@ -41,7 +43,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@{recipeData.date}"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@color/black"
                         android:textSize="@dimen/recipe_date_format_text_size"
                         android:textStyle="bold"
                         tools:text="25.126 au" />
@@ -55,22 +57,22 @@
                         android:textColor="@color/colorAccent"
                         android:textSize="@dimen/recipe_title_text_size"
                         android:textStyle="bold"
-                        tools:text="25.126 au" />
+                        tools:text="25.121 au" />
 
                     <TextView
                         android:id="@+id/recipe_headline"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="@{recipeData.tile}"
+                        android:text="@{recipeData.headline}"
                         android:textSize="@dimen/recipe_headline_text_size"
                         android:textStyle="normal"
-                        tools:text="25.126 au" />
+                        tools:text="25.123 au" />
 
                 </LinearLayout>
 
 
-                <com.google.android.material.imageview.ShapeableImageView
+                <ImageView
                     android:id="@+id/open_web"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

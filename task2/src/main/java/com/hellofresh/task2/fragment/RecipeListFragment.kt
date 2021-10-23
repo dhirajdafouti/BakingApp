@@ -68,7 +68,7 @@ class RecipeListFragment : RecipeBaseFragment() {
 
     @SuppressLint("TimberArgCount")
     private fun initAdapter() {
-        //   binding.listItem.adapter = adapter
+        binding.listItem.adapter = adapter
         viewModel.repoResult.observe(viewLifecycleOwner, Observer { it ->
             when (it) {
                 is RecipeResult.Success -> {

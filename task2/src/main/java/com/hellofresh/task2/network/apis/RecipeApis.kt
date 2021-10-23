@@ -11,6 +11,6 @@ import retrofit2.http.GET
 interface RecipeApis {
 
     //This Api will get the Recipe Related data from the Server.
-    @GET
+    @GET("recipes.json")
     suspend fun getRecipe(): List<NetworkDataObject>
 }
