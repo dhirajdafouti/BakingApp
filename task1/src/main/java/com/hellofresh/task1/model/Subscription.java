@@ -2,7 +2,26 @@ package com.hellofresh.task1.model;
 
 import org.jetbrains.annotations.TestOnly;
 
+/**
+ * This class will holds the data for the User Subscription.
+ */
 public class Subscription {
+
+    private long deliveryDay;
+    private int id;
+    private boolean isForFamily;
+
+    @TestOnly
+    public Subscription(int id, long deliveryDay, boolean isForFamily) {
+        this.id = id;
+        this.deliveryDay = deliveryDay;
+        this.isForFamily = isForFamily;
+    }
+
+    public Subscription() {
+
+    }
+
     public void setId(int id) {
         this.id = id;
     }
@@ -14,14 +33,6 @@ public class Subscription {
     public void setForFamily(boolean forFamily) {
         isForFamily = forFamily;
     }
-
-    private int id;
-
-    public Subscription() {
-
-    }
-
-    private long deliveryDay;
 
     public int getId() {
         return id;
@@ -35,13 +46,5 @@ public class Subscription {
         return isForFamily;
     }
 
-    @TestOnly
-    public Subscription(int id, long deliveryDay, boolean isForFamily) {
-        this.id = id;
-        this.deliveryDay = deliveryDay;
-        this.isForFamily = isForFamily;
-    }
-
-    private boolean isForFamily;
 
 }

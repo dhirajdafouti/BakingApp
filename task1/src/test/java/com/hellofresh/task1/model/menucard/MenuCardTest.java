@@ -48,6 +48,7 @@ public class MenuCardTest extends MockAccessItemsTest {
             e.printStackTrace();
         }
     }
+
     @Test
     public void testNoAvailableRecipeItemList() {
         menuCard.setListOfAvailableRecipe(new ArrayList<>());
@@ -57,6 +58,7 @@ public class MenuCardTest extends MockAccessItemsTest {
             Assert.assertEquals("Menu Card Exception No available Items.", e.getCode(), 100);
         }
     }
+
     @Test
     public void testSelectedItemsFromTheAvailableRecipeList() {
         List<Recipe> threeItemsSelectedList = new ArrayList<>();
@@ -68,7 +70,7 @@ public class MenuCardTest extends MockAccessItemsTest {
         threeItemsSelectedList.add(recipeSelected3);
         accessItemsInterface.setListOfSelectedRecipe(threeItemsSelectedList);
         try {
-            Assert.assertArrayEquals(threeItemsSelectedList.toArray(),menuCard.getListOfSelectedRecipe().toArray());
+            Assert.assertArrayEquals(threeItemsSelectedList.toArray(), menuCard.getListOfSelectedRecipe().toArray());
         } catch (MenuCardException e) {
             e.printStackTrace();
         }
@@ -92,12 +94,13 @@ public class MenuCardTest extends MockAccessItemsTest {
         }
 
     }
+
     @Test
     public void testSelectedZeroSizeFromTheAvailableRecipeList() {
         List<Recipe> noItemSelected = new ArrayList<>();
         accessItemsInterface.setListOfSelectedRecipe(noItemSelected);
         try {
-             menuCard.getNumberOfItemsSelected();
+            menuCard.getNumberOfItemsSelected();
         } catch (MenuCardException e) {
             Assert.assertEquals("Menu Card Exception No Item is Previously Selected.", e.getCode(), 500);
         }
@@ -114,6 +117,7 @@ public class MenuCardTest extends MockAccessItemsTest {
         }
 
     }
+
 
     @After
     public void tearDown() {

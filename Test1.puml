@@ -3,8 +3,6 @@ class com.hellofresh.task1.model.Recipe {
 - int id
 - String title
 - EventType event
-+ <<Create>> Recipe(int,String,EventType)
-+ <<Create>> Recipe()
 + int getId()
 + String getTitle()
 + EventType getEvent()
@@ -40,22 +38,18 @@ class com.hellofresh.task1.model.accessItems.AccessItemsListClass {
 }
 class com.hellofresh.task1.model.unselectedItems.UnSelectedRecipeItemClass {
 - AccessItemsInterface accessItemsInterface
-+ <<Create>> UnSelectedRecipeItemClass(AccessItemsInterface)
 + void markSingleUnSelectedRecipe(Recipe)
 + void markMultipleUnSelectedRecipe(List<Recipe>)
 }
 class com.hellofresh.task1.model.Exception.MenuCardException {
 - {static} long serialVersionUID
 - int code
-+ <<Create>> MenuCardException(String,int)
 + int getCode()
 }
 class com.hellofresh.task1.model.Subscription {
 - int id
 - long deliveryDay
 - boolean isForFamily
-+ <<Create>> Subscription()
-+ <<Create>> Subscription(int,long,boolean)
 + void setId(int)
 + void setDeliveryDay(long)
 + void setForFamily(boolean)
@@ -73,14 +67,13 @@ interface com.hellofresh.task1.model.accessItems.AccessItemsInterface {
 + void setListOfSelectedRecipe(List<Recipe>)
 + void setAvailableListFromMenuCard(List<Recipe>,boolean)
 }
-class com.hellofresh.task1.model.selectedItems.SelectedRecipeItemClass {
-- List<Recipe> selectedRecipeFromAvailableList
-- AccessItemsInterface accessItemsInterface
-+ <<Create>> SelectedRecipeItemClass(AccessItemsInterface)
+interface com.hellofresh.task1.model.selectedItems.SelectedItemsInterface {
 + void setSingleSelectedRecipe(Recipe)
 + void setMultipleSelectedRecipe(List<Recipe>)
 }
-interface com.hellofresh.task1.model.selectedItems.SelectedItemsInterface {
+class com.hellofresh.task1.model.selectedItems.SelectedRecipeItemClass {
+- List<Recipe> selectedRecipeFromAvailableList
+- AccessItemsInterface accessItemsInterface
 + void setSingleSelectedRecipe(Recipe)
 + void setMultipleSelectedRecipe(List<Recipe>)
 }
@@ -88,7 +81,6 @@ class com.hellofresh.task1.model.menucard.MenuCard {
 - AccessItemsInterface accessItemsInterface
 - Subscription subscription
 # List<Recipe> availableRecipeList
-+ <<Create>> MenuCard(AccessItemsInterface,Subscription)
 + void setListOfAvailableRecipe(List<Recipe>)
 + List<Recipe> getListOfAvailableRecipe()
 + List<Recipe> getListOfSelectedRecipe()

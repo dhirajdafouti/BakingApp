@@ -7,13 +7,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
+/**
+ * This class will provide the access for below mentioned functionalities.
+ * You should be able to request a list of selected recipes and the Size.
+ * You should be able to request a list of recipes which have a certain tag.
+ */
 public class AccessItemsListClass implements AccessItemsInterface {
-    @Override
-    public List<Recipe> getAvailableListOfRecipe() {
-        return availableListOfRecipe;
-    }
 
     private final List<Recipe> availableListOfRecipe = new ArrayList<>();
+
     private boolean isFamilyProperty;
 
     private final CopyOnWriteArrayList<Recipe> selectedListOfItem = new CopyOnWriteArrayList<>();
@@ -32,7 +34,7 @@ public class AccessItemsListClass implements AccessItemsInterface {
 
     @Override
     public List<Recipe> getListOfRecipesWithTag() {
-        return null;
+        return selectedListOfRecipeWithTag;
     }
 
     @Override
@@ -42,6 +44,7 @@ public class AccessItemsListClass implements AccessItemsInterface {
 
     @Override
     public void setListOfRecipesWithTag(List<Recipe> recipeListWithTag) {
+        this.selectedListOfRecipeWithTag.clear();
         this.selectedListOfRecipeWithTag.addAll(recipeListWithTag);
     }
 
@@ -52,14 +55,15 @@ public class AccessItemsListClass implements AccessItemsInterface {
     }
 
 
-    public List<Recipe> getSelectedListOfRecipeWithTag() {
-        return selectedListOfRecipeWithTag;
-    }
-
     @Override
     public void setAvailableListFromMenuCard(List<Recipe> availableListFromMenuCard, boolean isFamily) {
         this.availableListOfRecipe.clear();
         this.availableListOfRecipe.addAll(availableListFromMenuCard);
         this.isFamilyProperty = isFamily;
+    }
+
+    @Override
+    public List<Recipe> getAvailableListOfRecipe() {
+        return availableListOfRecipe;
     }
 }

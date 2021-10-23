@@ -3,17 +3,24 @@ package com.hellofresh.task1.model;
 
 import org.jetbrains.annotations.TestOnly;
 
+/**
+ * This class will holds the data related to Recipe Selected by the User.
+ */
 public class Recipe {
     private int id;
     private String title;
-   @TestOnly
+    private EventType event;
+
+    @TestOnly
     public Recipe(int id, String title, EventType event) {
         this.id = id;
         this.title = title;
         this.event = event;
     }
 
-    private EventType event;
+    public Recipe() {
+
+    }
 
     public int getId() {
         return id;
@@ -25,10 +32,6 @@ public class Recipe {
 
     public EventType getEvent() {
         return event;
-    }
-
-    public Recipe() {
-
     }
 
     public void setId(int id) {

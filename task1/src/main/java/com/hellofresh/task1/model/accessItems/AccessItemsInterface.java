@@ -5,21 +5,24 @@ import com.hellofresh.task1.model.Recipe;
 
 import java.util.List;
 
+/**
+ * This interface will be implemented by {@link AccessItemsListClass}.
+ */
 public interface AccessItemsInterface {
 
-    public List<Recipe> getListOfSelectedRecipes();
+    List<Recipe> getListOfSelectedRecipes();
 
-    public List<Recipe> getListOfRecipesWithTag();
+    List<Recipe> getListOfRecipesWithTag();
 
-    public int getListOfSelectedRecipe();
+    int getListOfSelectedRecipe();
 
-    public boolean isFamilyProperty();
+    boolean isFamilyProperty();
 
-    public List<Recipe> getAvailableListOfRecipe();
+    List<Recipe> getAvailableListOfRecipe();
 
-    public void setListOfRecipesWithTag(List<Recipe> recipeListWithTag);
+    void setListOfRecipesWithTag(List<Recipe> recipeListWithTag);
 
-    public void setListOfSelectedRecipe(List<Recipe> listOfSelectedRecipeItems);
+    void setListOfSelectedRecipe(List<Recipe> listOfSelectedRecipeItems);
 
-    public void setAvailableListFromMenuCard(List<Recipe> availableListFromMenuCard, boolean isFamily);
+    void setAvailableListFromMenuCard(List<Recipe> availableListFromMenuCard, boolean isFamily);
 }

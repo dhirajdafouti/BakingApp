@@ -124,6 +124,31 @@ public class SelectedRecipeItemClassTest extends MockAccessItemsTest {
         }
     }
 
+    @Test
+    public void testSelectedItemTagTheAvailableItemList() {
+        accessItemsInterface.setAvailableListFromMenuCard(recipeList,false);
+        try {
+            selectedRecipeItemClass.setSelectedMenuItemWithTag(EventType.Cold.getDisplayName());
+            Assert.assertEquals(2,accessItemsInterface.getListOfRecipesWithTag().size());
+        } catch (MenuCardException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+    @Test
+    public void testSelectedWithNoItemTagTheAvailableItemList() {
+        accessItemsInterface.setAvailableListFromMenuCard(recipeList,false);
+        try {
+            selectedRecipeItemClass.setSelectedMenuItemWithTag(EventType.NONE.getDisplayName());
+            Assert.assertEquals(0,accessItemsInterface.getListOfRecipesWithTag().size());
+        } catch (MenuCardException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
 
     @After
     public void tearDown() {
