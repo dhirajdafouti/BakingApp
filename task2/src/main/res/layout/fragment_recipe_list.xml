@@ -8,7 +8,6 @@
         <variable
             name="viewModel"
             type="com.hellofresh.task2.viewmodel.RecipeListViewModel" />
-
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -18,7 +17,7 @@
         tools:context=".activity.RecipeListActivity">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/list_search_user"
+            android:id="@+id/list_item"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/white"

@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 30
@@ -27,10 +28,13 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    viewBinding{
+    viewBinding {
         true
     }
+    buildFeatures {
+        dataBinding true
 
+    }
 
     configurations.all {
         resolutionStrategy {
@@ -101,7 +105,6 @@ dependencies {
     //Picasso
     implementation "com.squareup.picasso:picasso:$version_picasso"
 
-    // WorkManager
     implementation 'androidx.databinding:databinding-common:7.0.3'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
