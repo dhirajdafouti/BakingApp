@@ -73,6 +73,10 @@ You will be creating and adding behaviors to a Menu model:
 
 - Don’t forget to notify calling code about errors where appropriate.
 - The Recipe data structure is final. Please do not add more properties to it.
+
+## 📷 Screenshots
+<img src ="./classdiagram/Class_Diagram_Final.png" width="260" />
+
  
  
 ## Exercise II -  Recipes List View 
