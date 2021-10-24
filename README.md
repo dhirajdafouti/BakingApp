@@ -87,7 +87,7 @@ A sample application to demonstrate how to use Jetpack Architecture Components i
 
 ### Design & Testing Consideration. 
 
--MVVM android design pattern with Clean Architecture separates your view (i.e. Activitys and Fragments) from your business logic.It goes one step further in separating the responsibilities of your code base. It clearly abstracts the logic of the actions that can be performed in your app.
+MVVM android design pattern with Clean Architecture separates your view (i.e. Activitys and Fragments) from your business logic.It goes one step further in separating the responsibilities of your code base. It clearly abstracts the logic of the actions that can be performed in your app.
 
 Advantages of Using MVVM with  Clean Architecture
 
@@ -101,7 +101,7 @@ Testing Strategy
 
 Points
 
-    1 -Test as much we can like Utils class and other small class which can be easily testable.
+    1-Test as much we can like Utils class and other small class which can be easily testable.
     2-Focus more on Junit testing then Integration or End to End Testing.
     3-Architecture your application is such a way that maximum testablity can be achieved.
     4-Set a code coverage base limit (example 60% ) for your application and try to increase it further.
