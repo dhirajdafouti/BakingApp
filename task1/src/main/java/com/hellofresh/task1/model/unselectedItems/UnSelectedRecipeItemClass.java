@@ -45,6 +45,7 @@ public class UnSelectedRecipeItemClass implements UnSelectedItemsInterface {
                 }
             }
         } else {
+            accessItemsInterface.setListOfSelectedRecipe(selectedList);
             throw new MenuCardException("No Recipe Items to UnSelect", 900);
         }
         accessItemsInterface.setListOfSelectedRecipe(selectedList);

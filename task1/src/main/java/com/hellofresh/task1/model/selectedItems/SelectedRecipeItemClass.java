@@ -48,27 +48,32 @@ class SelectedRecipeItemClass implements SelectedItemsInterface {
 
     @Override
     public void setMultipleSelectedRecipe(List<Recipe> recipeList) throws MenuCardException {
-        if (accessItemsInterface.isFamilyProperty() && recipeList.size() <= 5) {
-            for (Recipe available : accessItemsInterface.getAvailableListOfRecipe()) {
-                for (Recipe selected : recipeList) {
-                    if (available.getId() == selected.getId()) {
-                        selectedRecipeFromAvailableList.add(selected);
-                    }
-                }
+        if (accessItemsInterface.isFamilyProperty()) {
+            if (recipeList.size() <= 5) {
+                createListOfMultipleSelectedItems(recipeList);
             }
-        } else if (!accessItemsInterface.isFamilyProperty() && recipeList.size() <= 3) {
-            for (Recipe available : accessItemsInterface.getAvailableListOfRecipe()) {
-                for (Recipe selected : recipeList) {
-                    if (available.getId() == selected.getId()) {
-                        selectedRecipeFromAvailableList.add(selected);
-                    }
-                }
-            }
-
+        } else if (recipeList.size() <= 3) {
+            createListOfMultipleSelectedItems(recipeList);
         } else {
-            throw new MenuCardException("Selection More Than 3 are not allowed!!", 600);
+            accessItemsInterface.setListOfSelectedRecipe(selectedRecipeFromAvailableList);
+            throw new MenuCardException("Selection for More Recipe Items are not allowed!!", 600);
         }
         accessItemsInterface.setListOfSelectedRecipe(selectedRecipeFromAvailableList);
+    }
+
+    /**
+     * This method will create a list of selected recipe items.
+     *
+     * @param recipeList :selected items recipe.
+     */
+    private void createListOfMultipleSelectedItems(List<Recipe> recipeList) {
+        for (Recipe available : accessItemsInterface.getAvailableListOfRecipe()) {
+            for (Recipe selected : recipeList) {
+                if (available.getId() == selected.getId()) {
+                    selectedRecipeFromAvailableList.add(selected);
+                }
+            }
+        }
     }
 
     @Override
@@ -79,10 +84,13 @@ class SelectedRecipeItemClass implements SelectedItemsInterface {
                 selectedRecipeListWithTag.add(value);
             }
         }
-        if (selectedRecipeListWithTag.size() == 0) {
-            throw new MenuCardException("No Recipe Item With Tag", 900);
-        }
+        //set the list of items selected as Tag empty.
         accessItemsInterface.setListOfRecipesWithTag(selectedRecipeListWithTag);
+
+        if (selectedRecipeListWithTag.size() == 0) {
+            throw new MenuCardException("No Recipe Item With Tag Selected", 900);
+        }
+
     }
 
 }
