@@ -109,10 +109,13 @@ Points
 Use tools like Essperso, Mockito etcs .
 
 Below are the image taken from Udacity Nano degree Program where I have learned the testing strategy.
+
+## 📷 Screenshots for testing stratery <Images Credit goes to Udacity Nano degree Program>
+ 
 <img src ="./classdiagram/unittest.PNG" width="260" />
-<img src ="./classdiagram/integration.PNG" width="260" />
+<img src ="./classdiagram/integration.PNG" width="260"/>
 <img src ="./classdiagram/endtoend.PNG" width="260" />
-<Images Credit goes to Udacity Nano degree Program>
+
 
   
 ## ⚙ Tech used
