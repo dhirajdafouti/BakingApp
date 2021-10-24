@@ -1,8 +1,10 @@
 package com.hellofresh.task2.utils
 
+import android.view.View
 import android.widget.ImageView
 import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
+import com.google.android.material.snackbar.Snackbar
 import com.squareup.picasso.Picasso
 
 @BindingAdapter("imageUrl")

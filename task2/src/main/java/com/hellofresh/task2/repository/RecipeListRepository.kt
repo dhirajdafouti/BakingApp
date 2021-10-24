@@ -3,11 +3,12 @@ package com.hellofresh.task2.repository
 import android.app.Application
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.hellofresh.task2.Error.RecipeResult
+import com.hellofresh.task2.error.RecipeResult
 import com.hellofresh.task2.domainmodel.RecipeUIData
 import com.hellofresh.task2.network.services.NetworkRecipeDataObject
 import com.hellofresh.task2.network.services.RecipeService
 import com.hellofresh.task2.network.services.asDomainObject
+import com.hellofresh.task2.network.startNetworkCallback
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.HttpException
@@ -28,8 +29,12 @@ class RecipeListRepository(private val application: Application) {
     suspend fun getRecipeDataFromNetwork() {
         Timber.d("Recipe Data Request is send to Server")
         _progressBar.value = true
-        withContext(Dispatchers.IO) {
-            requestRecipeDataFromNetwork()
+        if (startNetworkCallback(application)) {
+            withContext(Dispatchers.IO) {
+                requestRecipeDataFromNetwork()
+            }
+        } else {
+            recipeResult.postValue(RecipeResult.Error("No Internet Connectivity...."))
         }
         _progressBar.value = false
     }
@@ -43,11 +48,11 @@ class RecipeListRepository(private val application: Application) {
             successful = true
         } catch (exception: IOException) {
             Timber.d("The IO exception Received!!! $exception")
-            recipeResult.postValue(RecipeResult.Error(exception))
+            recipeResult.postValue(RecipeResult.Error(exception.toString()))
             successful = false
         } catch (exception: HttpException) {
             Timber.d("The Http exception Received!!! $exception")
-            recipeResult.postValue(RecipeResult.Error(exception))
+            recipeResult.postValue(RecipeResult.Error(exception.toString()))
             successful = false
         }
         return successful

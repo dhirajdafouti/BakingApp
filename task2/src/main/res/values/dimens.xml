@@ -5,4 +5,8 @@
     <dimen name="recipe_headline_text_size">10sp</dimen>
     <dimen name="recipe_title_text_size">16sp</dimen>
     <dimen name="recipe_date_format_text_size">18sp</dimen>
+    <dimen name="empty_list_top_margin">50dp</dimen>
+    <dimen name="textsize">12sp</dimen>
+    <dimen name="margin_right">5dp</dimen>
+    <dimen name="margintop">4dp</dimen>
 </resources>

@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 
 /**
- * Adapter for the list of repositories.
+ * Adapter class which will display the list of Recipe to the Recycler View.
  */
 
 class RecipeAdapter :
