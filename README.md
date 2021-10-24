@@ -101,10 +101,10 @@ Testing Strategy
 
 Points
 
-1-Test as much we can like Utils class and other small class which can be easily testable.
-2-Focus more on Junit testing then Integration or End to End Testing.
-3-Architecture your application is such a way that maximum testablity can be achieved.
-4-Set a code coverage base limit (example 60% ) for your application and try to increase it further.
+    1 -Test as much we can like Utils class and other small class which can be easily testable.
+    2-Focus more on Junit testing then Integration or End to End Testing.
+    3-Architecture your application is such a way that maximum testablity can be achieved.
+    4-Set a code coverage base limit (example 60% ) for your application and try to increase it further.
 
 Use tools like Essperso, Mockito etcs .
 
