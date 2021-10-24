@@ -122,13 +122,13 @@ Below are the image taken from Udacity Nano degree Program where I have learned 
 - Kotlin
 - Model-View-Viewmodel Architecture
 - Navigation component
-- Room database
 - Retrofit 2
 - GSON
 - Moshi
 - Kotlin Courtines.
 - Glide.
--Data-Binding.
+- Data-Binding.
+- Piccasso
 
 This app demonstrates the following views and techniques from the below documentation.
 
