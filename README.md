@@ -26,58 +26,57 @@ Hello! Thank you for taking the time to try our Android test. The goal of the te
 
 ## Exercise I - Menu Code Kata
 
-### Initial configuration
+### Design & Testing Consideration. 
 
-The idea of the first exercise is to design a simple implementation of a Menu feature based on the requirements listed below. Technical implementation is up to you, but all decisions should be listed in the README file with a short description of the reasonings.  We don't expect you to invest more than 2 hours on this exercise.
+The design of Menu Features follows the standard SOLID Principle. Classes are seperated based on their individual responsibity and which are open for extension as well. Followed the composition over inheritence principle so that changes in the base class should not effect the sub classes. High degree of testability is achieved.The code is well versed with Error Handling.
 
-For the purpose of this task we will assume the following:<br/> 
-A Recipe is a data structure with an id, title, and a list of tags associated with it. Examples of tags can be "hot", "quick", "low-calories", etc. Recipes are equal if their ids are equal. A Subscription is a data structure with id, delivery day, and isForFamily properties.
+***Classes and Responsibilities*** 
 
-You will be creating and adding behaviors to a Menu model:
+All the below class implements the Interface corresponding to their functionality assigned. 
 
-- A list of recipes available for selection is provided to the menu. 
-- Menu exposes a list of recipes available for selection.
-- Menu has a reference to an associated subscription.
+1-**SelectedRecipeItemClass**
 
-### Requirements
+    - Able to mark a single recipe as selected.
+    - Able to mark multiple recipes as selected.
+    - Able to mark the recipes with tag as selected.
+   
+   **Restricting the behavior**
 
-- Keep SOLID principles in mind while you are working on this exercise
-- Do not develop any UI for this exercise
-- Unit and/or integration tests should be part of this exercise
+    - You should not be able to select more than 3 recipes.
 
-**Selecting recipes in the menu**
+  **Modifying the behavior based on subscription type**
 
-- You should be able to mark a single recipe as selected.
-- You should be able to mark multiple recipes as selected.
-- You should be able to ask the menu how many recipes have been selected.
+    - You should be able to select up to 5 recipes if the subscription is for a family.
 
-**Unselecting recipes in the menu**
+2-**UnSelectedRecipeItemClass**
 
-- You should be able to unselect a single selected recipe.
-- You should be able to unselect multiple selected recipes.
+    - Able to unselect a single selected recipe.
+    - Able to unselect multiple selected recipes.
 
-**Accessing recipes in the menu**
+3-**AccessItemsListClass** 
 
-- You should be able to request a list of selected recipes.
-- You should be able to request a list of recipes which have a certain tag.
+    - You should be able to request a list of selected recipes.
+    - You should be able to request a list of recipes which have a certain tag.
 
-**Restricting the behavior**
+4-**MenuCard**
 
-- You should not be able to select more than 3 recipes.
+    - A list of recipes available for selection is provided to the menu. 
+    - Menu exposes a list of recipes available for selection.
+    - Menu has a reference to an associated subscription.
+    
+5-**MenuCardException**
 
-**Modifying the behavior based on subscription type**
+    - Handles the Exception thrown from different classes.
+    
 
-- You should be able to select up to 5 recipes if the subscription is for a family.
- 
-*Note*
+***Testing Strategy***
 
-- Don’t forget to notify calling code about errors where appropriate.
-- The Recipe data structure is final. Please do not add more properties to it.
+  Junit & Integration is achieved at a very high degree through following the above design approach.
 
 ## 📷 Screenshots
 <img src ="./classdiagram/Class_Diagram_Final.png" width="260" />
+<img src ="./classdiagram/TestCoverageReport.PNG" width="260" />
 
- 
  
 ## Exercise II -  Recipes List View 
 
