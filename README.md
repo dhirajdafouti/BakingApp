@@ -82,7 +82,7 @@ You will be creating and adding behaviors to a Menu model:
 ## Exercise II -  Recipes List View 
 
 ## Recipes List Application
-A simple single-page application showcasing the list recipes.
+A simple single-page application showcasing the list of recipes.
 A sample application to demonstrate how to use Jetpack Architecture Components in an Android Application following the Clean MVVM Architecture concepts.
 
 ### Design & Testing Consideration. 
