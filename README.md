@@ -1,29 +1,3 @@
-# android-test-2.0
-
-Hello! Thank you for taking the time to try our Android test. The goal of the test is to assess your coding and design skills. You will have to complete two exercises — design a simple implementation of the Menu Feature (Exercise 1) and create a simple single-page application showcasing the recipes (Exercise 2).
-
-**Note 1:** Exercise 1 and Exercise 2 are not related in any way and should be handled separately.
-
-**Note 2:** While we love open source here at HelloFresh, please do not create a public repo with your test in! This challenge is only shared with people interviewing, and for obvious reasons, we'd like it to remain this way.
-
-### Instructions
-
-- Clone this repo.
-- Create a new dev branch.
-- Implement Exercise 1 in the `task1` module, and Exercise 2 in the `task2` module.
-- Create a pull request against the master branch of this repo.
-- After creating your pull request, please send the link via email to our HR department in order for us to start the reviewing process.
-
-### Tips on How to Tackle the test
-
-- Schedule a specific time to tackle the test.
-- Be well rested and choose a quiet place with no interruptions.
-- Read the instructions and requirements carefully, and feel free to ask any questions.
-- Identify technical decisions you need to make and sketch out an initial plan.
-- Start coding and commit often.
-- Please consider Clean Code Principles.
-- Enrich the code with comments and include clear instructions.
-
 ## Exercise I - Menu Code Kata
 
 ### Design & Testing Consideration. 
